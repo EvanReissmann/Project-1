@@ -41,21 +41,23 @@ function movieSelected(id){
 function getMovie(){
     let movieId = sessionStorage.getItem("movieId");
 
-    axios.get ("https://imdb-api.com/API/SearchTitle/k_u5eiz1tf/"+movieId)
+    axios.get ("https://imdb-api.com/API/Title/k_u5eiz1tf/"+movieId)
  .then((response) => {
 console.log(response);
 let movie = response.data;
 
 let output = `
 <div class="row">
-    <div class="col-md-4>
-    <img src="${movie.image}" class="thumbnail">
+    <div class="col-md-4">
+        <img src="${movie.image}" class="thumbnail">
     </div>
     <div class="col-md-8">
-    <h2>${movie.title}</h2>
-    <ul class="list-group">
-        <li class="list-group-item"><strong>Genre:</strong> ${movie.Genre}</li>
-    </ul>
+        <h2>${movie.fullTitle}</h2>    
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Genres: </strong>${movie.genres}</li>
+            <li class="list-group-item"><strong>Awards: </strong>${movie.awards}</li>
+            <li class="list-group-item"><strong>Description: </strong>${movie.plot}</li>
+        </ul>
     </div>
 </div>    
 `;

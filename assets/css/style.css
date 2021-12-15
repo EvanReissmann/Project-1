@@ -4,6 +4,10 @@ body {
     margin: 0;
 }
 
+.jumbotron h3 {
+    font-color: black;
+}
+
 #movies img, #movie img{
     width: 100%;
 }
