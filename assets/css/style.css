@@ -4,6 +4,17 @@ body {
     margin: 0;
 }
 
-header {
+#movies img, #movie img{
+    width: 100%;
+}
 
+@media(min-widt:960px){
+
+#movies .col-md-3 .well{
+    height: 390px;
+}
+
+#movies .col-md-3 img{
+    height: 240px;
+}
 }
