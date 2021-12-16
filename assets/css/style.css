@@ -4,8 +4,21 @@ body {
     margin: 0;
 }
 
-.jumbotron h3 {
-    font-color: black;
+.text-center {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.col-md-8 h2 {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+}
+
+.col-md-3 h5 {
+    color: black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgba(245, 222, 19, 0.685);
 }
 
 #movies img, #movie img{
