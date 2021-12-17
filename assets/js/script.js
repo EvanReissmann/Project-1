@@ -1,3 +1,4 @@
+// movie search api logic 
 $(document).ready(( )=> {
     $("#searchForm").on("submit", (e) => {
         let searchText = $("#searchText").val();
@@ -68,4 +69,48 @@ $("#movie").html(output);
      console.log(err);
  });
 }
+
+
+//recipe search logic
+
+let searchButton = document.querySelector("#search")
+
+//event listener to the button that send request to api when clicked
+
+searchButton.addEventListener('click', ()=>{
+    console.log('button clicked')
+    sendApiRequest()
+})
+
+//asynchronomous function to fetch data from API
+async function sendApiRequest() {
+    let recipeText = $("#recipe-text").val();
+    let APP_ID = "5fa6c14a"
+    let API_KEY = "06b39f5e1cebc69ef4ae4c9a25b24763"
+    let response = await fetch(`https://api.edamam.com/search?app_id=${APP_ID}&app_key=${API_KEY}&q=${recipeText}`);
+    console.log(response)
+    let data = await response.json()
+    console.log(data)
+    useApiData(data)
+}
+
+//function that process the data from API
+
+function useApiData(data) {
+document.querySelector("#content").innerHTML = `
+<div class="card col-3 offset-1" style="width: 18rem;">
+  <img src="${data.hits[0].recipe.image}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${data.hits[0].recipe.label}</h5>
+    <p class="card-text">Calories: ${data.hits[0].recipe.calories}</p>
+    <a href="${data.hits[0].recipe.url}" class="btn btn-primary">See Recipe</a>
+  </div>
+</div>
+`;
+
+
+
+}
+
+
 
