@@ -41,3 +41,9 @@ body {
     margin-bottom: 50px;
 }
 
+.container2 {
+    background-image: url("../images/ola-mishchenko-VRB1LJoTZ6w-unsplash.jpg");
+    background-size: cover;
+    margin: 0;
+    flex-wrap: wrap;
+}
