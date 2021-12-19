@@ -26,8 +26,7 @@
 * JavaScript (Fetch method and Axios)
 
 ## Website
-
-...
+https://evanreissmann.github.io/Project-1/
 
 ## Screenshots
 
